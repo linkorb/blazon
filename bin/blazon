@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+use Blazon\Command\PublishCommand;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Dotenv\Dotenv;
+use AutoTune\Tuner;
+
+$loader = __DIR__ . '/../vendor/autoload.php';
+
+if (!file_exists($loader)) {
+    $loader = __DIR__ . '/../../../autoload.php';
+}
+
+if (!file_exists($loader)) {
+    die(
+        'You must set up the project dependencies, run the following commands:' . PHP_EOL .
+        'curl -s http://getcomposer.org/installer | php' . PHP_EOL .
+        'php composer.phar install' . PHP_EOL
+    );
+}
+
+$l = require $loader;
+
+if (class_exists(Tuner::class)) {
+    Tuner::init($l);
+}
+
+$filename = getcwd() . '/.env';
+if (file_exists($filename)) {
+    $dotenv = new Dotenv(true);
+    $dotenv->load($filename);
+}
+
+
+$application = new Application('Blazon', '1.0.0');
+$application->setCatchExceptions(true);
+$application->add(new PublishCommand($publisher));
+
+$application->run();

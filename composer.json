@@ -1,0 +1,38 @@
+{
+    "name": "linkorb/blazon",
+    "description": "Blazon: publish fast and beautiful websites, campaign sites, documentation, guides etc from data (e.g. Xillion Resources)",
+    "homepage": "http://www.github.com/linkorb/blazon",
+    "keywords": ["php", "xillion", "content", "cms", "static", "dynamic", "generator", "gatsby"],
+    "type": "application",
+    "authors": [
+      {
+        "name": "LinkORB Engineering",
+        "email": "engineering@linkorb.com",
+        "role": "Development"
+      }
+    ],
+    "require": {
+      "php": ">=7.2.0",
+      "symfony/console": "^5.2",
+      "symfony/yaml": "^5.0",
+      "twig/twig": "^1.0",
+      "symfony/dotenv": "^5.0",
+      "monolog/monolog": "^2.3",
+      "league/container": "^4.0",
+      "linkorb/xillion": "^1.8",
+        "league/event": "^3.0"
+    },
+    "require-dev": {
+      "linkorb/autotune": "^1.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "Blazon\\": "src/",
+        "Example\\": "example/src/"
+      }
+    },
+    "bin": [
+        "bin/xillion-publisher"
+    ],
+    "license": "MIT"
+}
