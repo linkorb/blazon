@@ -20,7 +20,9 @@
       "monolog/monolog": "^2.3",
       "league/container": "^4.0",
       "linkorb/xillion": "^1.8",
-        "league/event": "^3.0"
+      "league/event": "^3.0",
+      "laminas/laminas-diactoros": "^2.6",
+      "guzzlehttp/guzzle": "^7.4"
     },
     "require-dev": {
       "linkorb/autotune": "^1.0"

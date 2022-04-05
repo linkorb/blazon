@@ -19,7 +19,7 @@ class StaticHtmlPublisher
         $this->logger->info('Publishing!');
         foreach ($publication->getDocuments() as $document) {
 
-            $this->logger->debug('Generating ' . $document->getPath());
+            $this->logger->info('Generating `' . $document->getPath() . '`');
 
             $handler = $document->getHandler();
             $content = null;
@@ -29,7 +29,7 @@ class StaticHtmlPublisher
             if (is_string($handler)) {
                 $content = $handler;
             }
-            $path = $this->outputPath . $document->getPath();
+            $path = $this->outputPath . '/' . $document->getPath();
 
             $path .= '/index.html';
 

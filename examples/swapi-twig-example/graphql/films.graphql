@@ -1,0 +1,23 @@
+query {
+  allFilms {
+    films {
+      id
+      episodeID
+      title
+      producers
+      releaseDate
+      director
+      openingCrawl
+      characters: characterConnection {
+        edges {
+          character: node {
+            id
+            name
+            gender
+            hairColor
+          }
+        }
+      }
+    }
+  }
+}

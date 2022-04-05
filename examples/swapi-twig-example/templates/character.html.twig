@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+  <h1>Character "{{ character.name }}"</h1>
+
+  <ul>
+    <li>Eye color: {{ character.eyeColor }}</li>
+    <li>Hair color: {{ character.hairColor }}</li>
+
+  </ul>
+
+  <h3>Films ({{ character.filmConnection.films|length }})</h3>
+  <ul>
+    {% for film in character.filmConnection.films %}
+    <li>
+      <a href="/episode-{{ film.episodeID }}">
+      Episode {{ film.episodeID }}: {{ film.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+{% endblock %}

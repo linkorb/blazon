@@ -32,9 +32,8 @@ if (file_exists($filename)) {
     $dotenv->load($filename);
 }
 
-
 $application = new Application('Blazon', '1.0.0');
 $application->setCatchExceptions(true);
-$application->add(new PublishCommand($publisher));
+$application->add(new PublishCommand());
 
 $application->run();

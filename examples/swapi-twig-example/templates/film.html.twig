@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+  <h1>Episode {{ film.episodeID }}: {{ film.title }}</h1>
+
+  <ul>
+    <li>Director: {{ film.director }}</li>
+    <li>Producers: {% for producer in film.producers %}{{ producer }} {% endfor %}</li>
+    <li>Release date: {{ film.releaseDate }}</li>
+  </ul>
+
+  <h3>Characters ({{ film.characters.edges|length }})</h3>
+  <ul>
+    {% for edge in film.characters.edges %}
+    <li>
+      <a href="/character-{{ edge.character.id }}">
+      {{ edge.character.name }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h3>Opening crawl</h3>
+
+  <p class="lead"><center>{{ film['openingCrawl']|nl2br }}</center></p>
+
+
+{% endblock %}

@@ -1,7 +1,0 @@
-example.web/hello:
-  core.xillion.cloud/profiles:
-    - content.xillion.cloud/profiles/document
-  content.xillion.cloud/title: Hello world!
-  content.xillion.cloud/path: /hello
-  content.xillion.cloud/template: example.html.twig
-

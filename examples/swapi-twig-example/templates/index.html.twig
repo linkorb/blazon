@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+  <h1>Films</h1>
+  <ul>
+    {% for film in films %}
+    <li>
+      <a href="/episode-{{ film.episodeID }}">Episode {{ film.episodeID }}:  {{ film.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

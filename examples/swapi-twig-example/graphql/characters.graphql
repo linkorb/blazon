@@ -1,0 +1,28 @@
+query {
+	allPeople {
+		edges {
+			node {
+				id
+				name
+				birthYear
+				eyeColor
+				hairColor
+				gender
+				homeworld {
+					name
+				}
+				species {
+					 classification
+
+				}
+
+				filmConnection {
+					films {
+						title
+						episodeID
+					}
+				}
+			}
+		}
+	}
+}
