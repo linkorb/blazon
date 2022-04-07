@@ -2,7 +2,7 @@
     "name": "linkorb/blazon",
     "description": "Blazon: publish fast and beautiful websites, campaign sites, documentation, guides etc from data (e.g. Xillion Resources)",
     "homepage": "http://www.github.com/linkorb/blazon",
-    "keywords": ["php", "xillion", "content", "cms", "static", "dynamic", "generator", "gatsby"],
+    "keywords": ["php", "graphql", "markdown", "twig", "xillion", "content", "cms", "static", "dynamic", "generator", "gatsby"],
     "type": "application",
     "authors": [
       {
@@ -29,12 +29,11 @@
     },
     "autoload": {
       "psr-4": {
-        "Blazon\\": "src/",
-        "Example\\": "example/src/"
+        "Blazon\\": "src/"
       }
     },
     "bin": [
-        "bin/xillion-publisher"
+        "bin/blazon"
     ],
     "license": "MIT"
 }
