@@ -34,6 +34,10 @@ Blazon is a data-driven, plugin-powered, multi-target content publishing framewo
 * Twig templating
 * Supports both static site generation and dynamic rendering
 
+## Examples
+
+* https://github.com/linkorb/starwars-blazon graphql + twig example site
+
 ## Inspiration
 
 * Gatsby
