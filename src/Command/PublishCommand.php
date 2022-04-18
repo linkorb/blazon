@@ -34,6 +34,12 @@ class PublishCommand extends AbstractCommand
                 InputOption::VALUE_REQUIRED,
                 'Destination directory'
             )
+            ->addOption(
+                'watch',
+                'w',
+                InputOption::VALUE_NONE,
+                'Watch and auto re-publish'
+            )
         ;
     }
 
@@ -42,13 +48,28 @@ class PublishCommand extends AbstractCommand
     {
         $this->logger = new ConsoleLogger($output);
 
-        $publication = $this->buildPublication($input);
+        $watch = $input->getOption('watch');
 
 
-        $publisher = new StaticHtmlPublisher($this->logger, $this->destinationPath);
-        $publisher->publish($publication);
+        do {
+            $publication = $this->buildPublication($input);
+            $hash = $this->getContentHash($publication);
 
-        $output->writeLn('The end');
+            $this->logger->info("Content hash: " . $hash);
+
+            $publisher = new StaticHtmlPublisher($this->logger, $this->destinationPath);
+            $publisher->publish($publication);
+
+            if ($watch) {
+                $this->logger->info("Watching for changes: " . date('Y-m-d H:i:s') . ' (press CTRL+C to exit)');
+                do {
+                    sleep(1);
+                    $newHash = $this->getContentHash($publication);
+                } while ($newHash == $hash);
+                $hash = $newHash;
+            }
+        } while ($watch);
+
         return 0;
     }
 }
