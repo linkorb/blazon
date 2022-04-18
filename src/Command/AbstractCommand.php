@@ -17,6 +17,9 @@ use Blazon\Factory\ContainerFactory;
 use Blazon\Factory\PublicationFactory;
 use Blazon\Event;
 use Blazon\Dispatcher;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
+
 
 abstract class AbstractCommand extends Command
 {
@@ -68,5 +71,59 @@ abstract class AbstractCommand extends Command
 
         return $publication;
     }
+
+
+
+    protected function getContentHash($publication): string
+    {
+
+        $path = $publication->getPath();
+
+        $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
+
+        $filenames = array();
+
+        foreach ($rii as $file) {
+
+            if ($file->isDir()){
+                continue;
+            }
+
+            $include = true;
+            $filename = $file->getPathname();
+            $filename = substr($filename, strlen($publication->getPath())+1);
+
+            // TODO: base on .gitignore?
+            if (substr($filename, 0, 6) == 'build/') {
+                $include = false;
+            }
+            if (substr($filename, 0, 5) == '.git/') {
+                $include = false;
+            }
+            if (substr($filename, 0, 7) == 'vendor/') {
+                $include = false;
+            }
+            if (substr($filename, 0, 13) == 'node_modules/') {
+                $include = false;
+            }
+
+            if (substr(basename($filename), 0, 1) == '.') {
+                $include = false;
+            }
+
+            if ($include) {
+                $filenames[] = $filename;
+            }
+        }
+
+        // print_r($filenames);
+        $hash = null;
+        foreach ($filenames as $filename) {
+            $content = file_get_contents($publication->getPath() .'/' . $filename);
+            $hash = sha1($content . $hash);
+        }
+        return $hash;
+    }
+
 
 }
