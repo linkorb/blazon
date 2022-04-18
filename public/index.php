@@ -83,7 +83,7 @@ if ($document) {
     $handler = $document->getHandler();
     $content = null;
     if (is_callable($handler)) {
-        $content = $handler();
+        $content = $handler($publication, $document);
     }
     if (is_string($handler)) {
         $content = $handler;
