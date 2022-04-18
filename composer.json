@@ -23,7 +23,7 @@
       "league/event": "^3.0",
       "laminas/laminas-diactoros": "^2.6",
       "guzzlehttp/guzzle": "^7.4",
-        "league/commonmark": "^2.3"
+      "league/commonmark": "^2.3"
     },
     "require-dev": {
       "linkorb/autotune": "^1.0"
