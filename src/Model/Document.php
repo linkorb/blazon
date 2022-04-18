@@ -8,7 +8,7 @@ class Document
 {
     private $path = null;
 
-    public function __construct(string $path, $handler)
+    public function __construct(string $path, $handler, array $data = [])
     {
         if ($path[0]!='/') {
             throw new InvalidArgumentException("Invalid document path. Should start with a slash: " . $path);
@@ -18,6 +18,7 @@ class Document
         }
         $this->path = $path;
         $this->handler = $handler;
+        $this->data = $data;
     }
 
     public function getPath(): string
@@ -28,5 +29,10 @@ class Document
     public function getHandler()
     {
         return $this->handler;
+    }
+
+    public function getData(): array
+    {
+        return $this->data;
     }
 }
