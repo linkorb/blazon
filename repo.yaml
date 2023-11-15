@@ -6,7 +6,7 @@ description: "Publish fast and beautiful websites, campaign sites, documentation
 license: mit
 license_year: 2021
 name: blazon
-type: other
+type: application
 visibility: public
 github:
   features:

@@ -39,6 +39,7 @@ Blazon is a data-driven, plugin-powered, multi-target content publishing framewo
 
 * https://github.com/linkorb/starwars-blazon graphql + twig example site
 
+Build status: [![Release](https://github.com/linkorb/blazon/actions/workflows/30-release-and-build.yaml/badge.svg)](https://github.com/linkorb/blazon/actions/workflows/30-release-and-build.yaml)
 
 
 ## Installation

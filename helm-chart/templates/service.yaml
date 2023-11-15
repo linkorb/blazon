@@ -1,0 +1,16 @@
+# Managed by https://github.com/linkorb/repo-ansible. Manual changes will be overwritten.
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "blazon.fullname" . }}
+  labels:
+    {{- include "blazon.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "blazon.selectorLabels" . | nindent 4 }}
