@@ -1,0 +1,13 @@
+codeowners:
+- owners:
+  - '@joostfaassen'
+  pattern: '*'
+description: "Publish fast and beautiful websites, campaign sites, documentation, guides, from data"
+license: mit
+license_year: 2021
+name: blazon
+type: application
+visibility: public
+github:
+  features:
+    issues: true

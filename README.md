@@ -1,7 +1,8 @@
-<img src="doc/assets/blazon.png" />
+<!-- Managed by https://github.com/linkorb/repo-ansible. Manual changes will be overwritten. -->
+blazon
+============
 
-Blazon
-======
+<img src="docs/assets/blazon.png" />
 
 Blazon is a data-driven, plugin-powered, multi-target content publishing framework.
 
@@ -38,6 +39,8 @@ Blazon is a data-driven, plugin-powered, multi-target content publishing framewo
 
 * https://github.com/linkorb/starwars-blazon graphql + twig example site
 
+Build status: [![Release](https://github.com/linkorb/blazon/actions/workflows/30-release-and-build.yaml/badge.svg)](https://github.com/linkorb/blazon/actions/workflows/30-release-and-build.yaml)
+
 
 ## Installation
 
@@ -47,6 +50,7 @@ cd blazon
 composer install # install php dependencies into blazon's vendor/ directory
 ./bin/blazon -v # get version and help output
 ```
+
 
 ## Usage
 
@@ -105,13 +109,15 @@ It is not recommended to use the preview server in production. Use the `blazon p
 * Xillion
 * Schemata
 
-## License
+## Contributing
 
-MIT. Please refer to the [license file](LICENSE.md) for details.
+We welcome contributions to make this repository even better. Whether it's fixing a bug, adding a feature, or improving documentation, your help is highly appreciated. To get started, fork this repository then clone your fork.
 
+Be sure to familiarize yourself with LinkORB's [Contribution Guidelines](/CONTRIBUTING.md) for our standards around commits, branches, and pull requests, as well as our [code of conduct](/CODE_OF_CONDUCT.md) before submitting any changes.
+
+If you are unable to implement changes you like yourself, don't hesitate to open a new issue report so that we or others may take care of it.
 ## Brought to you by the LinkORB Engineering team
 
 <img src="http://www.linkorb.com/d/meta/tier1/images/linkorbengineering-logo.png" width="200px" /><br />
 Check out our other projects at [linkorb.com/engineering](http://www.linkorb.com/engineering).
-
-Btw, we're hiring!
+By the way, we're hiring!
