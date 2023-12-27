@@ -9,5 +9,6 @@ name: blazon
 type: application
 visibility: public
 github:
+  default_branch: master
   features:
     issues: true
