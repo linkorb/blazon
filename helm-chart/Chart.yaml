@@ -1,8 +1,0 @@
-# Managed by https://github.com/linkorb/repo-ansible. Manual changes will be overwritten.
-apiVersion: v2
-name: blazon
-description: blazon
-type: application
-# This is the chart version. This version number should be incremented each time you make changes
-version: 'chartversionplaceholder'
-appVersion: "latest"
