@@ -6,7 +6,7 @@ description: "Publish fast and beautiful websites, campaign sites, documentation
 license: mit
 license_year: 2021
 name: blazon
-type: application
+type: php-cli
 visibility: public
 github:
   default_branch: master
